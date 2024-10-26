@@ -1,0 +1,24 @@
+# sudo docker-compose up -d
+
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: my_postgres_db
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data         # Persistent storage for database data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Initial SQL script (optional)
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
+
+volumes:
+  db_data:
