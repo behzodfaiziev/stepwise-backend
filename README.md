@@ -28,6 +28,7 @@ Create a .env file in the root of the project with the following content:
 POSTGRES_USER=postgresql
 POSTGRES_PASSWORD=password
 POSTGRES_DB=mydb
+JWT_SECRET=dGVzdFNlY3JldEtleU5vdEZvclByb2R1Y3Rpb24
 ```
 
 ### 3. Build and Run the Application with Docker Compose
@@ -50,7 +51,7 @@ If you want to run the backend outside of Docker (e.g., using IntelliJ IDEA), ma
 .env file variables to the IntelliJ IDEA Run/Debug Configuration.
 
 ```shell
-POSTGRES_DB=mydb;POSTGRES_PASSWORD=password;POSTGRES_USER=postgresql
+POSTGRES_DB=mydb;POSTGRES_PASSWORD=password;POSTGRES_USER=postgresql;JWT_SECRET=ZEdWemRGTmxZM0psZEV0bGVVNXZkRVp2Y2xCeWIyUjFZM1JwYjI0
 ```
 
 ### 5. Stopping the Application
