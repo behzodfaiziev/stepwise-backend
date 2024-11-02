@@ -35,13 +35,13 @@ public class ChatBotServiceImpl implements ChatBotService {
   @Transactional
   public ChatBotMessageResponse replyToPrompt(ChatBotPromptRequest prompt)
       throws JsonProcessingException {
-    return ChatBotMessageResponse.builder()
-        .initialTopic("Initial Topic").message("Initial Message")
-        .sessionId(1L).build();
-    //    if (prompt.sessionId() == null) {
-    //      return initialSession(prompt); //
-    //      }
-    //    return replyToExistingSession(prompt);
+//    return ChatBotMessageResponse.builder()
+//        .initialTopic("Initial Topic").message("Initial Message")
+//        .sessionId(1L).build();
+        if (prompt.sessionId() == null) {
+          return initialSession(prompt); //
+          }
+        return replyToExistingSession(prompt);
   }
 
   @Transactional
