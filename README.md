@@ -29,6 +29,7 @@ POSTGRES_USER=postgresql
 POSTGRES_PASSWORD=password
 POSTGRES_DB=mydb
 JWT_SECRET=dGVzdFNlY3JldEtleU5vdEZvclByb2R1Y3Rpb24
+GEMINI_API_KEY=your_gemini_api_key
 ```
 
 ### 3. Build and Run the Application with Docker Compose
@@ -36,22 +37,23 @@ JWT_SECRET=dGVzdFNlY3JldEtleU5vdEZvclByb2R1Y3Rpb24
 To start the PostgreSQL database and Spring Boot backend services, run the following command:
 
 ```shell
-docker-compose up -d --build
+sudo docker-compose up -d --build
+
 ```
 
 - **If you need to start only the Database:**
 
 ```shell
-docker-compose up -d db
+sudo docker-compose up -d db
 ```
 
-### 4. Running the Application Locally (Outside Docker)
+### Optional. Running the Application Locally (Outside Docker)
 
 If you want to run the backend outside of Docker (e.g., using IntelliJ IDEA), make sure to add the
 .env file variables to the IntelliJ IDEA Run/Debug Configuration.
 
 ```shell
-POSTGRES_DB=mydb;POSTGRES_PASSWORD=password;POSTGRES_USER=postgresql;JWT_SECRET=ZEdWemRGTmxZM0psZEV0bGVVNXZkRVp2Y2xCeWIyUjFZM1JwYjI0
+POSTGRES_DB=mydb;POSTGRES_PASSWORD=password;POSTGRES_USER=postgresql;JWT_SECRET=ZEdWemRGTmxZM0psZEV0bGVVNXZkRVp2Y2xCeWIyUjFZM1JwYjI0;GEMINI_API_KEY=your_gemini_api_key;GEMINI_API_SECRET=your_gemini_api_secret
 ```
 
 ### 5. Stopping the Application
@@ -59,5 +61,16 @@ POSTGRES_DB=mydb;POSTGRES_PASSWORD=password;POSTGRES_USER=postgresql;JWT_SECRET=
 To stop and remove all containers, use:
 
 ```shell
-docker-compose down
+sudo docker-compose down
 ```
+
+## Integration with Mobile App
+
+- The mobile app for this project is built with Flutter and can be found at the following
+  repository:
+  [Stepwise](https://github.com/elffirem/StepWise)
+
+- To integrate the backend with the mobile app, you need make sure that backend is running via
+  **docker compose** and then run the mobile app.
+- Now, you can read the instructions in the mobile app repository to set up the mobile
+  app: [README.md](https://github.com/elffirem/StepWise/blob/main/README.md)
