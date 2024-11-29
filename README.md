@@ -8,6 +8,8 @@ are used for containerization to streamline setup and configuration.
 - Docker installed on your system
 - Docker Compose installed
     - (Optional) IntelliJ IDEA or another IDE for Java development
+- Note: sudo is required for Linux and MacOS users to run Docker commands, but not for Windows
+  users.
 
 ## Getting Started
 
@@ -54,7 +56,7 @@ Now, you can run the application with the following command:
 docker-compose up -d --build
 ```
 
-### - **If you need to start only the Database:**
+### 3.2 **If you need to start only the Database:** Linux, MacOS, and Windows
 
 ```shell
 sudo docker-compose up -d db
