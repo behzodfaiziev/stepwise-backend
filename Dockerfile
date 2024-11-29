@@ -7,12 +7,8 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-# Ensure the mvnw file is executable
-RUN chmod +x mvnw
-
-RUN ./mvnw install -DskipTests && \
-    mkdir -p target/dependency && \
-    (cd target/dependency; jar -xf ../*.jar)
+RUN ./mvnw install -DskipTests
+RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 # Runtime stage
 FROM eclipse-temurin:17-jdk-alpine
