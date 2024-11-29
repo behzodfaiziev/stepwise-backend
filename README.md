@@ -32,13 +32,26 @@ JWT_SECRET=dGVzdFNlY3JldEtleU5vdEZvclByb2R1Y3Rpb24
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
-### 3. Build and Run the Application with Docker Compose
+### 3. Build and Run the Application with Docker Compose: Linux and MacOS
 
 To start the PostgreSQL database and Spring Boot backend services, run the following command:
 
 ```shell
 sudo docker-compose up -d --build
+```
 
+### 3.1 Running the Application with Docker Compose: Windows
+
+Before running the application you have to run this command to convert mvnw file to Unix format:
+
+```shell
+dos2unix mvnw
+```
+
+Now, you can run the application with the following command:
+
+```shell
+docker-compose up -d --build
 ```
 
 - **If you need to start only the Database:**
