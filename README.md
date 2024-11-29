@@ -54,7 +54,7 @@ Now, you can run the application with the following command:
 docker-compose up -d --build
 ```
 
-- **If you need to start only the Database:**
+### - **If you need to start only the Database:**
 
 ```shell
 sudo docker-compose up -d db
