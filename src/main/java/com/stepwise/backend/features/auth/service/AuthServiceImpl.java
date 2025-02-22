@@ -39,13 +39,13 @@ public class AuthServiceImpl implements AuthService {
       throw new EmailAlreadyExistsException("This email is already in use.");
     }
     Timestamp currentTimestamp = Timestamp.from(Instant.now());
-    UsagePurpose usagePurpose = UsagePurpose.fromString(request.getPurpose());
+//    UsagePurpose usagePurpose = UsagePurpose.fromString(request.getPurpose());
 
     UserEntity user = UserEntity.builder()
         .email(request.getEmail())
         .password(passwordEncoder.encode(request.getPassword()))
         .username("")
-        .usagePurpose(usagePurpose)
+//        .usagePurpose(usagePurpose)
         .fullName(request.getFullName())
         .createdAt(currentTimestamp)
         .updatedAt(currentTimestamp)
