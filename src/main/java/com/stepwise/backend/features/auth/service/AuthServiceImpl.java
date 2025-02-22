@@ -45,7 +45,7 @@ public class AuthServiceImpl implements AuthService {
         .email(request.getEmail())
         .password(passwordEncoder.encode(request.getPassword()))
         .username("")
-//        .usagePurpose(usagePurpose)
+        .usagePurpose(UsagePurpose.CREATE)
         .fullName(request.getFullName())
         .createdAt(currentTimestamp)
         .updatedAt(currentTimestamp)
