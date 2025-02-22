@@ -25,7 +25,6 @@ public class AuthController {
       @Valid
       @RequestBody
       SignUpRequestDTO request) {
-    System.out.println("request: " + request);
     return ResponseEntity.ok(authService.signUp(request));
   }
 

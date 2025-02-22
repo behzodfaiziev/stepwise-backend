@@ -35,13 +35,11 @@ public class AuthServiceImpl implements AuthService {
 
   public SignUpResponseDTO signUp(SignUpRequestDTO request) {
 
-    System.out.println("1");
     if (userService.existsByEmail(request.getEmail())) {
       throw new EmailAlreadyExistsException("This email is already in use.");
     }
     Timestamp currentTimestamp = Timestamp.from(Instant.now());
 //    UsagePurpose usagePurpose = UsagePurpose.fromString(request.getPurpose());
-    System.out.println("2");
     UserEntity user = UserEntity.builder()
         .email(request.getEmail())
         .password(passwordEncoder.encode(request.getPassword()))
@@ -52,11 +50,9 @@ public class AuthServiceImpl implements AuthService {
         .updatedAt(currentTimestamp)
         .role(Roles.SIGNED)
         .build();
-    System.out.println("3");
     userService.saveUser(user);
 
     String jwtToken = jwtService.generateToken(user);
-    System.out.println("4");
     return SignUpResponseDTO.builder().token(jwtToken).user(user).build();
   }
 
